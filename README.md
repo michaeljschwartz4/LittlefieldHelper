@@ -18,6 +18,14 @@ chmod +x setup.sh
 ```
 The user will be prompted to enter their team's name and password to connect to the website.
 
+After the initial setup, an execution can be made by using the following commands:
+```angular2html
+chmod +x littlefield-script.py
+source venv/bin/activate
+./littlefield-script.py <team_name> <password>
+deactivate
+```
+
 ## Schema
 *INV* - Current inventory count
 

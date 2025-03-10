@@ -100,13 +100,19 @@ def main(team_name, password):
     br.form['password'] = password
     br.submit()
 
+
     # Global dictionary to hold all data.
     # Keys are simulation days (float); values are lists of measurements.
     LF_DATA = {}
 
     # Scrape Inventory Data (two-column series)
     inv_url = "http://op.responsive.net/Littlefield/Plot?data=INV&x=all"
-    inv_series_list = extract_points(br, inv_url, expected_matches=1)
+    try:
+        inv_series_list = extract_points(br, inv_url, expected_matches=1)
+    except:
+        print(f"Littlefield account with username: {team_name} and password: {password} does not exist or could not be"
+              f" accessed. Are you sure these are the right credentials?")
+        return
     inv_series = inv_series_list[0]
     for day, inv_value in inv_series.items():
         LF_DATA[day] = [inv_value]
