@@ -1,9 +1,21 @@
 # Littlefield Data Scraper
+## Intro
 This application will help collect data from the official website
 given the login credentials for a team. The data will be automatically
 formatted into a readable format, allowing the user to easily create graphs
 and analyze trends during the simulation. The application will run every hour
 on the hour, ensuring that data is collected for every day of the simulation.
+
+## Setup
+For proper execution, the `setup.sh` file will need to be executed. To install and
+setup the application, run the following commands:
+```angular2html
+cd ~/Desktop
+mkdir Littlefield-Data; cd Littlefield-Data
+git clone https://github.com/michaeljschwartz4/LittlefieldHelper.git
+chmod +x setup.sh
+./setup.sh <team_name> <password>
+```
 
 ## Schema
 *INV* - Current inventory count
@@ -45,14 +57,3 @@ on the hour, ensuring that data is collected for every day of the simulation.
 *JOBOUT2* - Number of completed jobs (Contract 3)
 
 *Backlog* - Jobs in backlog
-
-## Setup
-For proper execution, the `setup.sh` file will need to be executed. To install and
-setup the application, run the following commands:
-```angular2html
-cd ~/Desktop
-mkdir Littlefield-Data; cd Littlefield-Data
-git clone "github.link"
-chmod +x setup.sh
-./setup.sh <team_name> <password>
-```
