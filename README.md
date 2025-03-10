@@ -11,11 +11,12 @@ For proper execution, the `setup.sh` file will need to be executed. To install a
 setup the application, run the following commands:
 ```angular2html
 cd ~/Desktop
-mkdir Littlefield-Data; cd Littlefield-Data
 git clone https://github.com/michaeljschwartz4/LittlefieldHelper.git
+cd LittlefieldHelper
 chmod +x setup.sh
-./setup.sh <team_name> <password>
+./setup.sh
 ```
+The user will be prompted to enter their team's name and password to connect to the website.
 
 ## Schema
 *INV* - Current inventory count
