@@ -18,7 +18,11 @@ chmod +x setup.sh
 ```
 The user will be prompted to enter their team's name and password to connect to the website.
 
-After the initial setup, an execution can be made by using the following commands:
+This setup will update data to the spreadsheet every hour. **Any modifications to the file will be overwritten!
+Be sure to save your modifications to a new file!**
+
+### Alternative Execution
+After the initial setup, an ad hoc execution can be made by using the following commands:
 ```angular2html
 chmod +x littlefield-script.py
 source venv/bin/activate
@@ -26,6 +30,21 @@ source venv/bin/activate
 deactivate
 ```
 
+### Troubleshooting
+If issues come up, please check the log for relevant information.
+To verify that the job will run every hour, enter the following command into the terminal:
+`sudo crontab -u <device-username-here> -l`
+
+This will prompt the user to enter the password to their device.
+
+A successfully scheduled job will look like the following:
+```angular2html
+❯ sudo crontab -u <device-username-here> -l
+0 * * * * cd /Users/<device-username-here>/Desktop/Littlefield && ./venv/bin/python3 littlefield-script.py <team_name> <password> >> littlefield.log 2>&1
+```
+To remove your scheduled jobs, run `crontab -r`
+
+**For any further questions or issues with the application, please email mjschwa@uw.edu**
 ## Schema
 *INV* - Current inventory count
 
